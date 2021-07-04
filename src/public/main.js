@@ -9,4 +9,8 @@ function addTodo(text) {
     checked: false,
     id: Date.now(),
   };
+  //adds item that is created to the array above
+  todoItems.push(todo);
+  //using to test and show todo items in my console
+  console.log(todoItems);
 }

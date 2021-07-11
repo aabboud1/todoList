@@ -14,3 +14,6 @@ function addTodo(text) {
   //using to test and show todo items in my console
   console.log(todoItems);
 }
+
+// Select the form element
+const form = document.querySelector('.js-form');

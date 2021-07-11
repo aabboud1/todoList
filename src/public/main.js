@@ -32,3 +32,7 @@ form.addEventListener('submit', event => {
     input.focus();
   }
 });
+
+function renderTodo(todo) {
+
+}

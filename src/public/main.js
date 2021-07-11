@@ -18,6 +18,8 @@ function addTodo(text) {
 // Select the form element
 const form = document.querySelector('.js-form');
 
+// Add a submit event listener
 form.addEventListener('submit', event => {
- 
+  event.preventDefault();
+  const input = document.querySelector('.js-todo-input');
   }

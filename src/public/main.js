@@ -20,6 +20,15 @@ const form = document.querySelector('.js-form');
 
 // Add a submit event listener
 form.addEventListener('submit', event => {
+  // stop page refresh
   event.preventDefault();
   const input = document.querySelector('.js-todo-input');
+
+  // Get the input then remove whitespace
+  const text = input.value.trim();
+  if (text !== '') {
+    addTodo(text);
+    input.value = '';
+    input.focus();
   }
+});

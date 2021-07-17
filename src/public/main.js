@@ -48,4 +48,14 @@ function renderTodo(todo) {
 
   // setting data-key attribute
   node.setAttribute('data-key', todo.id);
+
+  // setting contents of the list html form
+  node.innerHTML = `
+  <input id="${todo.id}" type="checkbox"/>
+  <label for="${todo.id}" class="tick js-tick"></label>
+  <span>${todo.text}</span>
+  <button class="delete-todo js-delete-todo">
+  <svg><use href="#delete-icon"></use></svg>
+  </button>
+`;
 }

@@ -34,5 +34,9 @@ form.addEventListener('submit', event => {
 });
 
 function renderTodo(todo) {
+  // to select first element on the list
+  const list = document.querySelector('.js-todo-list');
 
+  // if true assign done to isChecked
+  const isChecked = todo.checked ? 'done': '';
 }

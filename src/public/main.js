@@ -58,4 +58,7 @@ function renderTodo(todo) {
   <svg><use href="#delete-icon"></use></svg>
   </button>
 `;
+
+  // to add item to the list
+  list.append(node);
 }

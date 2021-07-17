@@ -39,4 +39,8 @@ function renderTodo(todo) {
 
   // if true assign done to isChecked
   const isChecked = todo.checked ? 'done': '';
+
+  const node = document.createElement("li");
+
+  node.setAttribute('class', `todo-item ${isChecked}`);
 }

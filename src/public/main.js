@@ -38,9 +38,14 @@ function renderTodo(todo) {
   const list = document.querySelector('.js-todo-list');
 
   // if true assign done to isChecked
-  const isChecked = todo.checked ? 'done': '';
+  const isChecked = todo.checked ? 'done' : '';
 
-  const node = document.createElement("li");
+  // creating new list element
+  const node = document.createElement('li');
 
+  // setting class attribute
   node.setAttribute('class', `todo-item ${isChecked}`);
+
+  // setting data-key attribute
+  node.setAttribute('data-key', todo.id);
 }

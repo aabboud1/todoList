@@ -69,6 +69,7 @@ const list = document.querySelector('.js-todo-list');
 list.addEventListener('click', event => {
   if (event.target.classList.contains('js-tick')) {
     const itemKey = event.target.parentElement.dataset.key;
+    toggleDone(itemKey);
     
   }
 });

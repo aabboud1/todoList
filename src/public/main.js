@@ -3,6 +3,36 @@
 // array to hold the todo list items
 let todoItems = [];
 
+function addTodo(text) {
+  const todo = {
+    text,
+    checked: false,
+    id: Date.now(),
+  };
+  
+  todoItems.push(todo);
+  renderTodo(todo);
+
+}
+
+// Select the form element
+const form = document.querySelector('.js-form');
+
+// Add a submit event listener
+form.addEventListener('submit', (event) => {
+  // stop page refresh
+  event.preventDefault();
+  const input = document.querySelector('.js-todo-input');
+
+  // Get the input then remove whitespace
+  const text = input.value.trim();
+  if (text !== '') {
+    addTodo(text);
+    input.value = '';
+    input.focus();
+  }
+});
+
 function renderTodo(todo) {
   // to select first element on the list
   const list = document.querySelector('.js-todo-list');
@@ -33,34 +63,8 @@ function renderTodo(todo) {
   list.append(node);
 }
 
-function addTodo(text) {
-  const todo = {
-    text,
-    checked: false,
-    id: Date.now(),
-  };
-  // adds item that is created to the array above
-  todoItems.push(todo);
-  // using to test and show todo items in my console
-  renderTodo(todo);
-
-}
-
-// Select the form element
-const form = document.querySelector('.js-form');
-
-// Add a submit event listener
-form.addEventListener('submit', event => {
-  // stop page refresh
-  event.preventDefault();
-  const input = document.querySelector('.js-todo-input');
-
-  // Get the input then remove whitespace
-  const text = input.value.trim();
-  if (text !== '') {
-    addTodo(text);
-    input.value = '';
-    input.focus();
-  }
+// Select the entire list
+const list = document.querySelector('.js-todo-list');
+// Add a click event listener to the list and its children
+list.addEventListener('click', (event) => {
 });
-

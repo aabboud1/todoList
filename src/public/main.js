@@ -73,3 +73,7 @@ list.addEventListener('click', event => {
     
   }
 });
+
+function toggleDone(key) {
+
+}

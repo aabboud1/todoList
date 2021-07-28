@@ -1,7 +1,27 @@
 const todoItems = [];
 
 function renderTodo(todo) {
- 
+  const list = document.querySelector('.js-todo-list');
+  const item = document.querySelector(`[data-key='${todo.id}']`);
+
+  const isChecked = todo.checked ? 'done' : '';
+  const node = document.createElement('li');
+  node.setAttribute('class', `todo-item ${isChecked}`);
+  node.setAttribute('data-key', todo.id);
+  node.innerHTML = `
+    <input id="${todo.id}" type="checkbox"/>
+    <label for="${todo.id}" class="tick js-tick"></label>
+    <span>${todo.text}</span>
+    <button class="delete-todo js-delete-todo">
+    <svg><use href="#delete-icon"></use></svg>
+    </button>
+  `;
+
+  if (item) {
+    list.replaceChild(node, item);
+  } else {
+    list.append(node);
+  }
 }
 
 function addTodo(text) {

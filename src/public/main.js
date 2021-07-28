@@ -75,5 +75,8 @@ list.addEventListener('click', event => {
 });
 
 function toggleDone(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  todoItems[index].checked = !todoItems[index].checked;
+  renderTodo(todoItems[index]);
 
 }

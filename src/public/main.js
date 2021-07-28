@@ -80,3 +80,7 @@ function toggleDone(key) {
   renderTodo(todoItems[index]);
 
 }
+
+function renderTodo(todo) {
+  
+}
